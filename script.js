@@ -111,7 +111,7 @@ c('.menu-closer').addEventListener('click', ()=>{
 });
 
 $("#cartFinalizar").click(function(){
-    $(location).attr("href", "https://api.whatsapp.com/send?phone=+5524999212527&text=" + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n") + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
+    $(location).attr("href", "https://api.whatsapp.com/send?phone=+5524998364520&text=" + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n") + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
 
     var pegarTxt = document.getElementById("Total").innerText;
     
