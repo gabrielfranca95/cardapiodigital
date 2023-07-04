@@ -1,5 +1,3 @@
-
-
 let cart = [];
 let modalQt = 0;
 let key = 0;
@@ -25,10 +23,7 @@ menuJson.map((item, index)=>{
             if(sizeIndex == 2) {
                 size.classList.add('selected');
                 c('.menuInfo--actualPrice').innerHTML = `R$ ${menuJson[key].price[sizeIndex].toFixed(2)}`;
-                //c('.menuInfo--actualPrice2').innerHTML = `R$ ${menuJson[key].price[sizeIndex].toFixed(2)}`;
-
             }
-            //size.innerHTML = menuJson[key].sizes[sizeIndex];
             size.querySelector('span').innerHTML = menuJson[key].sizes[sizeIndex];
         });
         c('.menuInfo--qt').innerHTML = modalQt;
@@ -39,10 +34,7 @@ menuJson.map((item, index)=>{
         }, 200);
     });
 
-    
-    //document.querySelector('.menu-area').append(menuItem);
-    c('.menu-area').append(menuItem);
-    
+    c('.menu-area').append(menuItem);   
 });
 
 function closeModal(){
@@ -50,7 +42,6 @@ function closeModal(){
     setTimeout(()=> {
         c('.menuWindowArea').style.display = 'none';
     }, 500);
-    
 }
 
 cs('.menuInfo--cancelButton, .menuInfo--cancelMobileButton').forEach((item)=>{
@@ -72,13 +63,10 @@ c('.menuInfo--qtmais').addEventListener('click', ()=>{
 cs('.menuInfo--size').forEach((size, sizeIndex)=>{
     size.addEventListener('click', (e)=> {
         c('.menuInfo--size.selected').classList.remove('selected');
-        //e.target.classList.add('selected'); //ocorre erro se clicar no <span></span>
         size.classList.add('selected');
         c('.menuInfo--actualPrice').innerHTML = `R$ ${menuJson[key].price[sizeIndex].toFixed(2)}`;
-        //c('.menuInfo--actualPrice2').innerHTML = `R$ ${menuJson[key].price[sizeIndex].toFixed(2)}`;
     });
 });
-
 
 c('.menuInfo--addButton').addEventListener('click', ()=>{
     let size = parseInt(c('.menuInfo--size.selected').getAttribute('data-key'));
@@ -111,10 +99,11 @@ c('.menu-closer').addEventListener('click', ()=>{
 });
 
 $("#cartFinalizar").click(function(){
-    $(location).attr("href", "https://api.whatsapp.com/send?phone=+5524998364520&text=" + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n") + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
+    $(location).attr("href", "https://api.whatsapp.com/send?phone=+5524998364520&text=" 
+                     + encodeURI( "olá, gostaria de fazer um pedido\n" + document.getElementById("cart").innerText.replace(/<br\s*\/?>/, "\n")
+                                 + document.getElementById("details").textContent + "\n *Campo para endereço de entrega e observações:* \n"))
 
     var pegarTxt = document.getElementById("Total").innerText;
-    
 })
 
 
@@ -144,7 +133,6 @@ function updateCart() {
             }
             //itens abaixo aparecem no carrinho enviar pedido
             cartItem.querySelector('img').src = modelItem.img;
-            //cartItem.querySelector('.cart--item-nome').innerHTML = `${modelItem.name} - ${modelItem.sizes[itemCart.size]}`;
             cartItem.querySelector('.cart--item-nome').innerHTML = `${modelItem.name} ${menuizeName}`;
             cartItem.querySelector('.cart--item--qt').innerHTML = itemCart.qt;
             cartItem.querySelector('.cart--item-qtmenos').addEventListener('click',()=>{
@@ -170,63 +158,5 @@ function updateCart() {
     } else {
         c('aside').classList.remove('show');
         c('aside').style.left = '100vw';
-    }
-
-  
-   
+    }   
 }
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
